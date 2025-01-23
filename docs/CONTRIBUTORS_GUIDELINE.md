@@ -102,6 +102,4 @@ We’re thrilled that you’re interested in contributing to TrustBridge! This g
 ---
 
 Thank you for contributing to TrustBridge! Together, we can build something amazing. 🚀✨
-```
 
----
