@@ -1,8 +1,4 @@
-# TrustBridge Backend 🌉🔒
-
-[![Rust](https://img.shields.io/badge/Rust-1.75+-orange.svg)](https://www.rust-lang.org/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14.0+-blue.svg)](https://www.postgresql.org/)
-[![Docker](https://img.shields.io/badge/Docker-Supported-blue.svg)](https://www.docker.com/)
+# TrustBridge SmartContract 🌉🔒
 
 ## 🎯 Project Overview
 
