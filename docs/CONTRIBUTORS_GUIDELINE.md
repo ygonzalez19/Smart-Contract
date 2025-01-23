@@ -94,12 +94,6 @@ We’re thrilled that you’re interested in contributing to TrustBridge! This g
 
 ---
 
-## 📣 Communication Channels
-- For questions or discussions, use the following:
-  - [Slack Channel](#) (Link to be added)
-  - GitHub Discussions (if available)
-
----
 
 Thank you for contributing to TrustBridge! Together, we can build something amazing. 🚀✨
 
