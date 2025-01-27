@@ -76,7 +76,21 @@ async fn test_release_funds() {
 async fn test_cancel_and_refund() {
     let service = setup_test_db();
 
-    let result = service.cancel_and_refund(1).await;
+    let test_escrow = Escrow {
+        id: 0,
+        loan_amount: 1000,
+        loan_term: "12 months".to_string(),
+        purpose_of_loan: "Test loan".to_string(),
+        monthly_income: 5000,
+        status: "".to_string(),
+        sender_address: "sender123".to_string(),
+        recipient_address: "recipient456".to_string(),
+        locked_funds: 0,
+    };
+
+    let created = service.create_escrow(test_escrow).await.unwrap();
+
+    let result = service.cancel_and_refund(created.id).await;
     assert!(result.is_ok());
 
     let escrow = result.unwrap();
