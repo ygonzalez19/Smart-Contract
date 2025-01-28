@@ -22,3 +22,5 @@ pub async fn authenticate_wallet(wallet: &WalletIntegration) -> Result<bool, Str
         }
     }
 }
+
+pub mod escrow;
