@@ -20,7 +20,8 @@ impl Config {
                 .expect("Missing FIREBASE_PRIVATE_KEY"),
             firebase_client_email: env::var("FIREBASE_CLIENT_EMAIL")
                 .expect("Missing FIREBASE_CLIENT_EMAIL"),
-            api_secret_key: env::var("API_SECRET_KEY").expect("Missing API_SECRET_KEY"),
+            api_secret_key: env::var("API_SECRET_KEY")
+                .expect("Missing API_SECRET_KEY"),
         }
     }
 }

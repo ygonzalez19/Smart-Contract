@@ -1,7 +1,8 @@
 use crate::config::Config;
+use dotenvy::dotenv; // Importa dotenvy en lugar de dotenv
+use std::env;
 use axum::{routing::get, Router};
-use dotenvy::dotenv;
-use std::{env, net::SocketAddr};
+use std::net::SocketAddr;
 
 mod config;
 mod routes;
@@ -11,10 +12,17 @@ mod schema;
 mod tests;
 
 fn load_env() {
-    dotenv().ok();
+    dotenvy::from_filename(".env.local").ok();
+
+    println!("=== Variables de entorno cargadas ===");
+    for (key, value) in env::vars() {
+        println!("{} = {}", key, value);
+    }
+
     let project_id = env::var("FIREBASE_PROJECT_ID").expect("FIREBASE_PROJECT_ID not set");
     println!("Firebase Project ID: {}", project_id);
 }
+
 
 #[tokio::main]
 async fn main() {
