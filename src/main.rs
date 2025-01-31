@@ -24,22 +24,14 @@ async fn main() {
 
     let config = Config::from_env();
 
-    // Log the Firebase and wallet configuration for debugging purposes
     log::info!("Firebase Project ID: {}", config.firebase_project_id);
     log::info!("Firebase Client Email: {}", config.firebase_client_email);
-    log::info!("Albedo API Key: {}", config.albedo_api_key);
-    log::info!("Freighter API Key: {}", config.freighter_api_key);
 
-    // Initialize routes
-    let app = Router::new()
-        .route("/health", get(routes::health::health_check))
-        .route("/wallet/authenticate", get(routes::wallet::authenticate_wallet))
-        .route("/wallet/transfer", get(routes::wallet::transfer_funds));
+    let app = Router::new().route("/health", get(routes::health::health_check));
 
     let addr = SocketAddr::from(([0, 0, 0, 0], 8080));
     log::info!("Running on http://{}", addr);
 
-    // Start the server
     axum::Server::bind(&addr)
         .serve(app.into_make_service())
         .await
